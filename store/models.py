@@ -2,6 +2,7 @@
 from django.utils import timezone
 from django.db import models
 
+
 class Product(models.Model):
     DISCOUNT_RATE = 0.10
 
@@ -33,6 +34,7 @@ class Product(models.Model):
     def __repr__(self):
         return '<Product object ({}) "{}">'.format(self.id, self.name)
 
+
 class ShoppingCart(models.Model):
     TAX_RATE = 0.13
   
@@ -56,6 +58,7 @@ class ShoppingCart(models.Model):
         name = self.name or '[Guest]'
         address = self.address or '[No Address]'
         return '<ShoppingCart object ({}) "{}" "{}">'.format(self.id, name, address)
+
 
 class ShoppingCartItem(models.Model):
     id = models.AutoField(primary_key=True)
